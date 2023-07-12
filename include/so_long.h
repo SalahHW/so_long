@@ -6,11 +6,11 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 21:03:34 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/07 23:33:41 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/07/12 17:34:09 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libs/libft/libft.h"
+#include "../lib/libft/libft.h"
 #include <stdlib.h>
 
 //		parser.c		//
