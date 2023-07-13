@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 21:56:18 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/13 03:21:45 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/07/14 00:27:04 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,10 @@ void	parse_argument(int argc, char **argv)
 		printed_exit_error("Wrong number of argument");
 	argv++;
 	check_file_format(*argv);
+}
+
+void	parse_map(int map_fd)
+{
+	if (map_fd < 0)
+		printed_exit_error("File not found");
 }
