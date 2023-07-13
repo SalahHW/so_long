@@ -6,7 +6,7 @@
 #    By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 21:30:47 by sbouheni          #+#    #+#              #
-#    Updated: 2023/07/13 03:02:07 by sbouheni         ###   ########.fr        #
+#    Updated: 2023/07/14 00:37:06 by sbouheni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,9 +29,10 @@ $(NAME)			:	$(SRCS) $(LIBFT)
 
 clean			:
 	rm -f $(NAME)
-	cd ./libft && make clean
+	cd ./libft && make $@
 
 fclean			:	clean
+	cd ./libft && make $@
 
 re				:	fclean all
 
