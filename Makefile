@@ -6,7 +6,7 @@
 #    By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 21:30:47 by sbouheni          #+#    #+#              #
-#    Updated: 2023/07/14 00:37:06 by sbouheni         ###   ########.fr        #
+#    Updated: 2023/07/14 15:41:17 by sbouheni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,13 +19,17 @@ NAME			=	so_long
 LIBFT			=	libft/libft.a
 HEADER			=	include/so_long.h
 
-SRCS			=	src/so_long.c src/parser.c src/error/arg_error.c
+SRCS			=	src/so_long.c src/parser.c src/error/arg_error.c			\
+					src/map_build.c												\
+					src/list_utils/push.c
 
 all				:	$(NAME)
 
 $(NAME)			:	$(SRCS) $(LIBFT)
-	make -C libft
 	$(COMPILE) $(HEADER) $(SRCS) -L./libft/ -lft -o $(NAME)
+
+$(LIBFT)		:
+	make -C libft
 
 clean			:
 	rm -f $(NAME)
@@ -36,5 +40,5 @@ fclean			:	clean
 
 re				:	fclean all
 
-debug			:
+debug			:	$(SRCS) $(LIBFT)
 	$(DEBUG) $(HEADER) $(SRCS) -L./libft/ -lft -o $(NAME)
