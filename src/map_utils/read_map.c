@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 19:17:50 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/14 19:45:06 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/07/14 20:33:15 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ t_map_edge	*read_map(int fd)
 	line = get_next_line(fd);
 	if (!line)
 		printed_exit_error("File is empty");
+	map = malloc(sizeof(t_map_edge));
 	init(map);
 	while (line)
 	{
