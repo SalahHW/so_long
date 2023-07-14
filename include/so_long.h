@@ -6,13 +6,16 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 21:03:34 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/14 20:26:59 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/07/14 21:12:12 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
-#include <fcntl.h>
-#include <stdlib.h>
+#ifndef SO_LONG_H
+# define SO_LONG_H
+
+# include "../libft/libft.h"
+# include <fcntl.h>
+# include <stdlib.h>
 
 typedef struct s_map_elem_count
 {
@@ -44,5 +47,8 @@ void				printed_exit_error(char *msg);
 t_map_edge			*read_map(int fd);
 //		list_utils/push.c		//
 void				push_front(t_map_edge *list, char *line);
+void				clear_list(t_map_edge *list);
 //		list_utils/init.c		//
 void				init(t_map_edge *list);
+
+#endif
