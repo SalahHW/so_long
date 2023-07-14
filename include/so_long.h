@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 21:03:34 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/14 21:12:12 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/07/14 21:36:25 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,17 +38,19 @@ typedef struct s_map_edge
 	t_map			*last;
 }					t_map_edge;
 
-//		parser.c				//
+//		parser.c					//
 void				parse_argument(int argc, char **argv);
 void				parse_map(t_map_edge *map);
-//		error/exit_error.c		//
+//		parser_utils/check_arg.c	//
+void				check_file_format(char *str);
+//		error/exit_error.c			//
 void				printed_exit_error(char *msg);
-//		map_utils/read_map.c	//
+//		map_utils/read_map.c		//
 t_map_edge			*read_map(int fd);
-//		list_utils/push.c		//
+//		list_utils/push.c			//
 void				push_front(t_map_edge *list, char *line);
 void				clear_list(t_map_edge *list);
-//		list_utils/init.c		//
+//		list_utils/init.c			//
 void				init(t_map_edge *list);
 
 #endif
