@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 21:56:18 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/16 18:24:55 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/07/16 18:38:14 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ void	parse_map(t_map_edge *map)
 {
 	check_element(map);
 	check_format(map);
+	check_closing(map);
 	// check_doability(*map);
 }
