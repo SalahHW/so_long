@@ -6,7 +6,7 @@
 #    By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 21:30:47 by sbouheni          #+#    #+#              #
-#    Updated: 2023/07/16 18:23:41 by sbouheni         ###   ########.fr        #
+#    Updated: 2023/07/16 22:00:39 by sbouheni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,12 +19,16 @@ NAME			=	so_long
 LIBFT			=	libft/libft.a
 HEADER			=	include/so_long.h
 
-SRCS			=	src/so_long.c src/parser.c src/error/arg_error.c			\
+SRCS			=	src/so_long.c												\
+					src/parser.c 												\
 					src/parser_utils/check_arg.c								\
 					src/parser_utils/check_element.c							\
 					src/parser_utils/check_format.c								\
+					src/parser_utils/check_closing.c							\
+					src/error/arg_error.c										\
 					src/map_utils/read_map.c									\
-					src/list_utils/push.c src/list_utils/init.c					\
+					src/list_utils/push.c										\
+					src/list_utils/init.c										\
 					src/list_utils/clear.c										\
 
 
