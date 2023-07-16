@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 16:47:44 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/16 18:30:20 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/07/16 18:58:37 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,5 @@ void	check_format(t_map_edge *map)
 		width = temp_width;
 		map_ptr = map_ptr->next;
 	}
+	map->attribute->width = width;
 }
