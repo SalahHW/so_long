@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 21:03:34 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/17 23:19:07 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/07/17 23:22:50 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void				check_element(t_map_edge *map);
 void				check_format(t_map_edge *map);
 void				check_closing(t_map_edge *map);
 void				check_doability(t_map_edge *map);
-//		error/
+//		error/printed_exit_error.c
 void				printed_exit_error(char *msg);
 //		map_utils/read_map.c
 t_map_edge			*read_map(int fd);
