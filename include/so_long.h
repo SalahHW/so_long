@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 21:03:34 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/16 22:00:21 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/07/16 22:48:51 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,13 @@ void				check_file_format(char *str);
 void				check_element(t_map_edge *map);
 void				check_format(t_map_edge *map);
 void				check_closing(t_map_edge *map);
-void				check_doability(t_map_edge map);
+void				check_doability(t_map_edge *map);
 //		error/
 void				printed_exit_error(char *msg);
 //		map_utils/read_map.c
 t_map_edge			*read_map(int fd);
+//		map_utils/position.c
+void				get_start_pos(t_map_edge *map);
 //		list_utils/push.c
 void				push_back(t_map_edge *list, char *line);
 //		list_utils/init.c
