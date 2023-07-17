@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 21:37:45 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/16 17:57:06 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/07/17 22:46:36 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,7 @@ void	check_element(t_map_edge *map)
 		line_ptr = map_ptr->line;
 		while (*line_ptr && *line_ptr != '\n')
 		{
-			if (*line_ptr == '0')
-				;
-			else if (*line_ptr == '1')
+			if (*line_ptr == '0' || *line_ptr == '1')
 				;
 			else if (*line_ptr == 'C')
 				map->attribute->item++;
