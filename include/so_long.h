@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 21:03:34 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/16 22:48:51 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/07/17 23:19:07 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_map_attribute
 	int				exit;
 	int				item;
 	int				player;
+	int				enemy;
 	int				x_player_pos;
 	int				y_player_pos;
 }					t_map_attribute;

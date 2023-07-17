@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 16:06:58 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/16 17:32:56 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/07/17 23:19:29 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	init_attribute(t_map_attribute *attribute)
 	attribute->exit = 0;
 	attribute->item = 0;
 	attribute->player = 0;
+	attribute->enemy = 0;
 	attribute->x_player_pos = 0;
 	attribute->y_player_pos = 0;
 }
