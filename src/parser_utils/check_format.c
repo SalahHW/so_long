@@ -6,34 +6,25 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 16:47:44 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/16 18:58:37 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/07/21 00:33:32 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
+#include <stddef.h>
 
-void	check_format(t_map_edge *map)
+void	check_format(t_map *map)
 {
-	t_map	*map_ptr;
-	char	*line_ptr;
-	int		width;
-	int		temp_width;
+	size_t	width;
+	int	y;
 
-	width = 0;
-	map_ptr = map->first;
-	while (map_ptr)
+	y = 0;
+	width = ft_strlen(map->map_grid[y]);
+	while (map->map_grid[y])
 	{
-		line_ptr = map_ptr->line;
-		temp_width = 0;
-		while (*line_ptr && *line_ptr != '\n')
-		{
-			temp_width++;
-			line_ptr++;
-		}
-		if (width != 0 && temp_width != width)
+		if (ft_strlen(map->map_grid[y]) != width)
 			printed_exit_error("Map is not a square");
-		width = temp_width;
-		map_ptr = map_ptr->next;
+		y++;
 	}
-	map->attribute->width = width;
+	map->width = width;
 }

@@ -6,37 +6,37 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 21:37:45 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/17 23:19:42 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/07/20 23:24:39 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-void	check_element(t_map_edge *map)
+void	check_element(t_map *map)
 {
-	t_map	*map_ptr;
-	char	*line_ptr;
+	int	x;
+	int y;
 
-	map_ptr = map->first;
-	while (map_ptr)
+	y = 0;
+	while (map->map_grid[y])
 	{
-		line_ptr = map_ptr->line;
-		while (*line_ptr && *line_ptr != '\n')
+		x = 0;
+		while (map->map_grid[y][x])
 		{
-			if (*line_ptr == '0' || *line_ptr == '1')
+			if (map->map_grid[y][x] == '0' || map->map_grid[y][x] == '1')
 				;
-			else if (*line_ptr == 'C')
-				map->attribute->item++;
-			else if (*line_ptr == 'E')
-				map->attribute->exit++;
-			else if (*line_ptr == 'P')
-				map->attribute->player++;
-			else if (*line_ptr == 'K')
-				map->attribute->enemy++;
+			else if (map->map_grid[y][x] == 'C')
+				map->item++;
+			else if (map->map_grid[y][x] == 'E')
+				map->exit++;
+			else if (map->map_grid[y][x] == 'P')
+				map->player++;
+			else if (map->map_grid[y][x] == 'K')
+				map->enemy++;
 			else
 				printed_exit_error("Map contains wrong elements");
-			line_ptr++;
+			x++;
 		}
-		map_ptr = map_ptr->next;
+		y++;
 	}
 }

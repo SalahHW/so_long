@@ -6,37 +6,31 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 18:38:53 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/16 21:45:18 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/07/20 23:31:49 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-void	check_closing(t_map_edge *map)
+void	check_closing(t_map *map)
 {
-	t_map	*map_ptr;
-	char	*line_ptr;
-	int		line;
-	int		column;
+	int x;
+	int y;
 
-	line = 0;
-	map_ptr = map->first;
-	while (map_ptr)
+	y = 0;
+	while (map->map_grid[y])
 	{
-		column = 0;
-		line_ptr = map_ptr->line;
-		while (*line_ptr && *line_ptr != '\n')
+		x = 0;
+		while (map->map_grid[y][x])
 		{
-			if (line == 0 || line == map->attribute->height - 1 || column == 0
-				|| column == map->attribute->width - 1)
+			if (y == 0 || y == map->height - 1 || x == 0
+				|| x == map->width - 1)
 			{
-				if (*line_ptr != '1')
+				if (map->map_grid[y][x] != '1')
 					printed_exit_error("Map is not closed");
 			}
-			column++;
-			line_ptr++;
+			x++;
 		}
-		line++;
-		map_ptr = map_ptr->next;
+		y++;
 	}
 }
