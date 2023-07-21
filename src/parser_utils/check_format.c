@@ -6,12 +6,11 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 16:47:44 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/21 00:33:32 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/07/21 18:33:34 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
-#include <stddef.h>
 
 void	check_format(t_map *map)
 {
@@ -27,4 +26,5 @@ void	check_format(t_map *map)
 		y++;
 	}
 	map->width = width;
+	map->height = y;
 }
