@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 19:17:50 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/21 00:44:56 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/07/21 18:09:28 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_map	*read_map(int fd)
 	buffer = ft_calloc(1, 1);
 	while (line)
 	{
-		buffer = p_free_strjoin(line, buffer);
+		buffer = p_free_strjoin(buffer, line);
 		line = get_next_line(fd);
 	}
 	map = malloc(sizeof(t_map));
