@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 21:38:02 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/21 00:42:42 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/07/21 16:58:12 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ int	main(int argc, char **argv)
 	map = read_map(map_fd);
 	close(map_fd);
 	parse_map(map);
-	//clear_list(map);
-	//free(map);
 	p_free_splited_str(map->map_grid);
 	free(map);
 }
