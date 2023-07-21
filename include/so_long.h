@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 21:03:34 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/20 23:53:21 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/07/21 18:52:09 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,12 @@ void		parse_argument(int argc, char **argv);
 void		parse_map(t_map *map);
 //		parser_utils/
 void		check_file_format(char *str);
-void		check_element(t_map *map);
 void		check_format(t_map *map);
 void		check_closing(t_map *map);
-//void		check_doability(t_map *map);
+//			element.c
+void		count_element(t_map *map);
+void		check_element_count(t_map *map);
+void		check_doability(t_map *map);
 //		error/printed_exit_error.c
 void		printed_exit_error(char *msg);
 //		map_utils/read_map.c

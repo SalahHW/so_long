@@ -6,13 +6,13 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 21:37:45 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/20 23:24:39 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/07/21 18:31:34 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-void	check_element(t_map *map)
+void	count_element(t_map *map)
 {
 	int	x;
 	int y;
