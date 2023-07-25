@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 21:03:34 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/21 19:42:49 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/07/25 16:24:25 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_map
 	int		player_x_position;
 	int		player_y_position;
 	int		enemy;
+	int		collectible;
 }			t_map;
 
 //		parser.c
@@ -43,9 +44,10 @@ void		check_element_count(t_map *map);
 void		check_doability(t_map *map);
 //		error/printed_exit_error.c
 void		printed_exit_error(char *msg);
-//		map_utils/read_map.c
+//		map_utils/
 t_map		*read_map(int fd);
-//		list_utils/
 void		init_attribute(t_map *attribute);
+t_map		*get_map_copy(t_map *map);
+void		clear_map(t_map *map);
 
 #endif

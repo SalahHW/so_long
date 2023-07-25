@@ -6,22 +6,50 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 22:24:04 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/20 23:54:02 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/07/25 16:36:55 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
+static int	is_collectible(char c)
+{
+	if (c == 'C' || c == 'E')
+		return (1);
+	return (0);
+}
+
+static int	is_no_collectible(char c)
+{
+	if (c == '1' || c == 'K')
+		return (1);
+	return (0);
+}
+
+static int	is_doable(t_map *map, int x, int y)
+{
+	if (is_no_collectible(map->map_grid[y][x]))
+		return (0);
+	if (is_collectible(map->map_grid[y][x]))
+		map->collectible--;
+	map->map_grid[y][x] = '1';
+	is_doable(map, x, y + 1);
+	is_doable(map, x, y - 1);
+	is_doable(map, x - 1, y);
+	is_doable(map, x + 1, y);
+	if (!map->collectible)
+		return (1);
+	return (0);
+}
+
 void	check_doability(t_map *map)
 {
-	t_map	*player_position;
-	char	*top_position;
-	char	*bottom_posiiton;
-	char	*left_position;
-	char	*right_position;
+	t_map	*map_copy;
 
-	player_position = get_start_pos(map);
-//	top_position = get_top_position(map);
-//	bottom_posiiton = get_top_position(map);
-	ft_printf("%d\n", map->attribute->y_player_pos);
+	map_copy = get_map_copy(map);
+	if (!is_doable(map_copy, map_copy->player_x_position,
+			map_copy->player_y_position))
+		return (clear_map(map_copy), clear_map(map),
+			printed_exit_error("Map is not doable"));
+	clear_map(map_copy);
 }
