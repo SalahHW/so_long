@@ -6,7 +6,7 @@
 #    By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 21:30:47 by sbouheni          #+#    #+#              #
-#    Updated: 2023/07/25 16:18:59 by sbouheni         ###   ########.fr        #
+#    Updated: 2023/07/26 20:59:43 by sbouheni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ COMPILE			=	$(CC) $(CFLAGS)
 DEBUG			=	$(CC) $(DEBUGFLAGS)
 NAME			=	so_long
 LIBFT			=	libft/libft.a
+LIBMLX			=	minilibx/libmlx_Linux.a
 HEADER			=	include/so_long.h
 
 SRCS			=	src/so_long.c												\
@@ -31,12 +32,13 @@ SRCS			=	src/so_long.c												\
 					src/map_utils/init.c										\
 					src/map_utils/copy.c										\
 					src/map_utils/clear.c										\
+					src/game_utils/launch.c										\
 
 
 all				:	$(NAME)
 
 $(NAME)			:	$(SRCS) $(LIBFT)
-	$(COMPILE) $(HEADER) $(SRCS) -L./libft/ -lft -o $(NAME)
+	$(COMPILE) $(HEADER) $(SRCS) -L./libft/ -lft -L./minilibx/ -lmlx -lXext -lX11 -o $(NAME)
 
 $(LIBFT)		:
 	make -C libft
@@ -51,4 +53,4 @@ fclean			:	clean
 re				:	fclean all
 
 debug			:	$(SRCS) $(LIBFT)
-	$(DEBUG) $(HEADER) $(SRCS) -L./libft/ -lft -o $(NAME)
+	$(DEBUG) $(HEADER) $(SRCS) -L./libft/ -lft -L./minilibx/ -lmlx -lXext -lX11 -o $(NAME)

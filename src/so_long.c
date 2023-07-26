@@ -6,11 +6,13 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 21:38:02 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/21 16:58:12 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/07/26 16:20:49 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
+
+void	print_map(t_map *map);
 
 int	main(int argc, char **argv)
 {
@@ -23,6 +25,7 @@ int	main(int argc, char **argv)
 	map = read_map(map_fd);
 	close(map_fd);
 	parse_map(map);
-	p_free_splited_str(map->map_grid);
-	free(map);
+	/////////////////////////
+	launch_mlx(map);
+	clear_map(map);
 }
