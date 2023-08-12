@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 16:06:58 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/08/12 21:21:19 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/12 21:51:45 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ void	init_attribute(t_map *attribute)
 	attribute->portal_x_position = 0;
 	attribute->portal_y_position = 0;
 	attribute->enemy = 0;
+	attribute->move_counter = 0;
 	attribute->frame = 1;
 }
