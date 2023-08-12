@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 21:37:45 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/21 19:44:50 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/12 01:47:46 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,11 @@ void	count_element(t_map *map)
 			else if (map->map_grid[y][x] == 'C')
 				map->item++;
 			else if (map->map_grid[y][x] == 'E')
+			{
 				map->exit++;
+				map->portal_x_position = x;
+				map->portal_y_position = y;
+			}
 			else if (map->map_grid[y][x] == 'P')
 			{
 				map->start++;

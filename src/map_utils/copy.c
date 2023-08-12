@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 22:13:35 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/25 17:38:30 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/07/30 18:58:26 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,6 @@ t_map	*get_map_copy(t_map *original_map)
 		printed_exit_error("Memory allocation problem");
 	copy_map_grid(original_map, map_copy);
 	copy_map_set(original_map, map_copy);
-	map_copy->collectible = map_copy->item + 1;
+	map_copy->item = map_copy->item + 1;
 	return (map_copy);
 }

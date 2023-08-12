@@ -1,30 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   block_type.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/07 21:38:02 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/30 17:57:00 by sbouheni         ###   ########.fr       */
+/*   Created: 2023/08/02 19:05:14 by sbouheni          #+#    #+#             */
+/*   Updated: 2023/08/02 19:08:26 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#include "../../include/so_long.h"
 
-void	print_map(t_map *map);
-
-int	main(int argc, char **argv)
+int	is_enemy(char c)
 {
-	int		map_fd;
-	t_map	*map;
+	if (c == 'K')
+		return (1);
+	return (0);
+}
 
-	parse_argument(argc, argv);
-	argv++;
-	map_fd = open(*argv, O_RDWR);
-	map = read_map(map_fd);
-	close(map_fd);
-	parse_map(map);
-	launch_mlx(map);
-	clear_map(map);
+int	is_wall(char c)
+{
+	if (c == '1')
+		return (1);
+	return (0);
+}
+
+int	is_item(char c)
+{
+	if (c == 'C')
+		return (1);
+	return (0);
+}
+
+int	is_portal(char c)
+{
+	if (c == 'E')
+		return (1);
+	return (0);
 }

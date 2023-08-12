@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   position.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/07 21:38:02 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/30 17:57:00 by sbouheni         ###   ########.fr       */
+/*   Created: 2023/07/30 21:46:54 by sbouheni          #+#    #+#             */
+/*   Updated: 2023/08/12 01:59:31 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#include "../../include/so_long.h"
 
-void	print_map(t_map *map);
-
-int	main(int argc, char **argv)
+int		is_valid_position(t_map *map, int x, int y)
 {
-	int		map_fd;
-	t_map	*map;
+	if (is_wall(map->map_grid[y][x]))
+		return 0;
+	if (is_enemy(map->map_grid[y][x]))
+		exit(1);
+		//game_over();
+	if (is_item(map->map_grid[y][x]))
+		map->item--;
+	if (is_portal(map->map_grid[y][x]))
+	{
+		if (!map->item)
+			exit(1);
+		//	game_win();
+	}
 
-	parse_argument(argc, argv);
-	argv++;
-	map_fd = open(*argv, O_RDWR);
-	map = read_map(map_fd);
-	close(map_fd);
-	parse_map(map);
-	launch_mlx(map);
-	clear_map(map);
+	return (1);
 }

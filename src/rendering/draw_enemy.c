@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   draw_enemy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/07 21:38:02 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/30 17:57:00 by sbouheni         ###   ########.fr       */
+/*   Created: 2023/07/30 18:36:22 by sbouheni          #+#    #+#             */
+/*   Updated: 2023/07/30 18:38:43 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#include "../../include/so_long.h"
 
-void	print_map(t_map *map);
-
-int	main(int argc, char **argv)
+void	draw_enemy(t_map *map, int x, int y)
 {
-	int		map_fd;
-	t_map	*map;
-
-	parse_argument(argc, argv);
-	argv++;
-	map_fd = open(*argv, O_RDWR);
-	map = read_map(map_fd);
-	close(map_fd);
-	parse_map(map);
-	launch_mlx(map);
-	clear_map(map);
+	mlx_put_image_to_window(map->mlx_ptr, map->window, map->enemy_img, x
+			* map->enemy_width, y * map->enemy_height);
 }

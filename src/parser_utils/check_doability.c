@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 22:24:04 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/26 22:46:11 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/07/30 21:21:49 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ static int	is_doable(t_map *map, int x, int y)
 	if (is_no_collectible(map->map_grid[y][x]))
 		return (0);
 	if (is_collectible(map->map_grid[y][x]))
-		map->collectible--;
+		map->item--;
 	map->map_grid[y][x] = '1';
 	is_doable(map, x, y + 1);
 	is_doable(map, x, y - 1);
 	is_doable(map, x - 1, y);
 	is_doable(map, x + 1, y);
-	if (!map->collectible)
+	if (!map->item)
 		return (1);
 	return (0);
 }
@@ -47,9 +47,11 @@ void	check_doability(t_map *map)
 	t_map	*map_copy;
 
 	map_copy = get_map_copy(map);
+	ft_printf("Map copy items : %d\n", map_copy->item);
 	if (!is_doable(map_copy, map_copy->player_x_position,
 			map_copy->player_y_position))
 		return (clear_map(map_copy), clear_map(map),
 			printed_exit_error("Map is not doable"));
+	ft_printf("Map copy items : %d\n", map_copy->item);
 	clear_map(map_copy);
 }

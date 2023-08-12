@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   launch.c                                           :+:      :+:    :+:   */
+/*   event.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/25 20:21:22 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/29 03:41:42 by sbouheni         ###   ########.fr       */
+/*   Created: 2023/07/28 09:44:25 by sbouheni          #+#    #+#             */
+/*   Updated: 2023/07/29 03:45:17 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-void	launch_mlx(t_map *map)
+int	deal_key(int key, t_map *map)
 {
-	map->mlx_ptr = mlx_init();
-	load_texture(map);
-	map->window = mlx_new_window(map->mlx_ptr, map->width * 64, map->height
-			* 64, "so_long");
+	if (key == 113 || key == 65307)
+	{
+		mlx_destroy_window(map->mlx_ptr, map->window);
+		exit(0);
+	}
+	if (key == 119 || key == 65362)
+		move_up(map);
+	else if (key == 115 || key == 65364)
+		move_down(map);
+	else if (key == 97 || key == 65361)
+		move_left(map);
+	else if (key == 100 || key == 65363)
+		move_right(map);
+	ft_printf("%d\n", key);
 	render_window(map);
-	mlx_key_hook(map->window, deal_key, map);
-	mlx_loop(map->mlx_ptr);
+	return (0);
 }

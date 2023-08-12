@@ -6,7 +6,7 @@
 #    By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 21:30:47 by sbouheni          #+#    #+#              #
-#    Updated: 2023/07/26 20:59:43 by sbouheni         ###   ########.fr        #
+#    Updated: 2023/08/12 01:49:08 by sbouheni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,18 @@ SRCS			=	src/so_long.c												\
 					src/map_utils/copy.c										\
 					src/map_utils/clear.c										\
 					src/game_utils/launch.c										\
+					src/game_utils/texture.c									\
+					src/game_utils/movement.c									\
+					src/game_utils/block_type.c									\
+					src/game_utils/position.c									\
+					src/game_utils/event.c										\
+					src/rendering/render.c										\
+					src/rendering/draw_ground.c									\
+					src/rendering/draw_wall.c									\
+					src/rendering/draw_item.c									\
+					src/rendering/draw_enemy.c									\
+					src/rendering/draw_player.c									\
+					src/rendering/draw_portal.c									\
 
 
 all				:	$(NAME)

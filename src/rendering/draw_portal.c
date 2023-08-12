@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   draw_portal.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/07 21:38:02 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/30 17:57:00 by sbouheni         ###   ########.fr       */
+/*   Created: 2023/07/30 18:40:04 by sbouheni          #+#    #+#             */
+/*   Updated: 2023/07/30 21:25:34 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/so_long.h"
+#include "../../include/so_long.h"
 
-void	print_map(t_map *map);
-
-int	main(int argc, char **argv)
+void	draw_portal(t_map *map, int x, int y)
 {
-	int		map_fd;
-	t_map	*map;
-
-	parse_argument(argc, argv);
-	argv++;
-	map_fd = open(*argv, O_RDWR);
-	map = read_map(map_fd);
-	close(map_fd);
-	parse_map(map);
-	launch_mlx(map);
-	clear_map(map);
+	ft_printf("Item left : %d\n", map->item);
+	if (map->item == 0)
+	{
+		ft_printf("draw portal\n", map->item);
+		mlx_put_image_to_window(map->mlx_ptr, map->window, map->portal_img, x
+				* map->portal_width, y * map->portal_height);
+	}
+	else
+	{
+		ft_printf("draw ground\n", map->item);
+		draw_ground(map, x, y);
+	}
 }

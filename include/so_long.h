@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 21:03:34 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/26 21:49:00 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/12 01:41:54 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,12 @@ typedef struct s_map
 	int		start;
 	int		exit;
 	int		item;
+	int		enemy;
 	int		player_x_position;
 	int		player_y_position;
-	int		enemy;
-	int		collectible;
+	int		portal_x_position;
+	int		portal_y_position;
+	char    previous_block;
 
 	void	*mlx_ptr;
 	void	*window;
@@ -74,4 +76,23 @@ void		init_attribute(t_map *attribute);
 void		clear_map(t_map *map);
 //		game_utils/
 void		launch_mlx(t_map *map);
+void		load_texture(t_map *map);
+int			deal_key(int key, t_map *map);
+void		move_up(t_map *map);
+void		move_down(t_map *map);
+void		move_left(t_map *map);
+void		move_right(t_map *map);
+int			is_enemy(char c);
+int			is_wall(char c);
+int			is_item(char c);
+int			is_portal(char c);
+int			is_valid_position(t_map *map, int x, int y);
+//		rendering/
+void		render_window(t_map *map);
+void		draw_ground(t_map *map, int x, int y);
+void		draw_wall(t_map *map, int x, int y);
+void		draw_item(t_map *map, int x, int y);
+void		draw_enemy(t_map *map, int x, int y);
+void		draw_player(t_map *map, int x, int y);
+void		draw_portal(t_map *map, int x, int y);
 #endif
