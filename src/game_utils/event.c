@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 09:44:25 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/29 03:45:17 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/12 07:55:57 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	deal_key(int key, t_map *map)
 {
-	if (key == 113 || key == 65307)
+	if (key == 65307)
 	{
 		mlx_destroy_window(map->mlx_ptr, map->window);
 		exit(0);
@@ -27,7 +27,6 @@ int	deal_key(int key, t_map *map)
 		move_left(map);
 	else if (key == 100 || key == 65363)
 		move_right(map);
-	ft_printf("%d\n", key);
 	render_window(map);
 	return (0);
 }
