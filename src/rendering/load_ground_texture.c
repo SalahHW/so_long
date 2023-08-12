@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_enemy.c                                       :+:      :+:    :+:   */
+/*   load_ground_texture.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/30 18:36:22 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/08/12 13:40:15 by sbouheni         ###   ########.fr       */
+/*   Created: 2023/08/12 13:10:19 by sbouheni          #+#    #+#             */
+/*   Updated: 2023/08/12 13:18:59 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-void	draw_enemy(t_map *map, int x, int y)
+static void	check_ground_texture(t_map *map)
 {
-	mlx_put_image_to_window(map->mlx_ptr, map->window, map->enemy_img, x
-		* map->enemy_width, y * map->enemy_height);
+	if (!map->ground_img)
+		printed_exit_error("Ground texture missing");
+}
+
+void	load_ground_texture(t_map *map)
+{
+	map->ground_img = mlx_xpm_file_to_image(map->mlx_ptr, "./texture/0.xpm",
+			&map->ground_width, &map->ground_height);
+	check_ground_texture(map);
 }

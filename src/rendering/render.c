@@ -6,13 +6,13 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 17:21:33 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/30 21:29:21 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/12 13:38:00 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-void render_window(t_map *map)
+void	render_window(t_map *map)
 {
 	int	x;
 	int	y;
