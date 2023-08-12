@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 22:24:04 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/30 21:21:49 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/12 21:39:23 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,9 @@ void	check_doability(t_map *map)
 	t_map	*map_copy;
 
 	map_copy = get_map_copy(map);
-	ft_printf("Map copy items : %d\n", map_copy->item);
 	if (!is_doable(map_copy, map_copy->player_x_position,
 			map_copy->player_y_position))
 		return (clear_map(map_copy), clear_map(map),
 			printed_exit_error("Map is not doable"));
-	ft_printf("Map copy items : %d\n", map_copy->item);
 	clear_map(map_copy);
 }
