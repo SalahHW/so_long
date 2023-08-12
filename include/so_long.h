@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 21:03:34 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/08/12 13:22:03 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/12 21:20:05 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct s_map
 	int		player_y_position;
 	int		portal_x_position;
 	int		portal_y_position;
-	char    previous_block;
+	int		frame;
 
 	void	*mlx_ptr;
 	void	*window;
