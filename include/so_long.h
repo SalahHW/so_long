@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 21:03:34 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/08/12 01:41:54 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/12 13:22:03 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,15 +45,22 @@ typedef struct s_map
 	void	*item_img;
 	int		item_height;
 	int		item_width;
-	void	*portal_img;
-	int		portal_height;
-	int		portal_width;
 	void	*enemy_img;
 	int		enemy_height;
 	int		enemy_width;
 	void	*player_img;
 	int		player_height;
 	int		player_width;
+	void	*portal1_img;
+	void	*portal2_img;
+	void	*portal3_img;
+	void	*portal4_img;
+	void	*portal5_img;
+	void	*portal6_img;
+	void	*portal7_img;
+	void	*portal8_img;
+	int		portal_height;
+	int		portal_width;
 }			t_map;
 
 //		parser.c
@@ -88,6 +95,12 @@ int			is_item(char c);
 int			is_portal(char c);
 int			is_valid_position(t_map *map, int x, int y);
 //		rendering/
+void		load_enemy_texture(t_map *map);
+void		load_ground_texture(t_map *map);
+void		load_item_texture(t_map *map);
+void		load_player_texture(t_map *map);
+void		load_portal_texture(t_map *map);
+void		load_wall_texture(t_map *map);
 void		render_window(t_map *map);
 void		draw_ground(t_map *map, int x, int y);
 void		draw_wall(t_map *map, int x, int y);
