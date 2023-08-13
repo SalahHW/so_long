@@ -6,7 +6,7 @@
 #    By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 21:30:47 by sbouheni          #+#    #+#              #
-#    Updated: 2023/08/13 16:08:37 by sbouheni         ###   ########.fr        #
+#    Updated: 2023/08/14 00:56:29 by sbouheni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ SRCS			=	src/so_long.c												\
 					src/parser_utils/format.c									\
 					src/parser_utils/closing.c									\
 					src/parser_utils/check_doability.c							\
-					src/error/printed_exit_error.c								\
+					src/end_game/printed_exit_error.c							\
 					src/map_utils/read_map.c									\
 					src/map_utils/init.c										\
 					src/map_utils/copy.c										\
