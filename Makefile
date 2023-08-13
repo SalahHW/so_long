@@ -6,7 +6,7 @@
 #    By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 21:30:47 by sbouheni          #+#    #+#              #
-#    Updated: 2023/08/12 13:27:39 by sbouheni         ###   ########.fr        #
+#    Updated: 2023/08/13 16:08:37 by sbouheni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,6 +51,7 @@ SRCS			=	src/so_long.c												\
 					src/rendering/draw_enemy.c									\
 					src/rendering/draw_player.c									\
 					src/rendering/draw_portal.c									\
+					src/rendering/animation.c									\
 
 
 all				:	$(NAME)

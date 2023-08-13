@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   event.c                                            :+:      :+:    :+:   */
+/*   animation.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/28 09:44:25 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/08/14 00:46:17 by sbouheni         ###   ########.fr       */
+/*   Created: 2023/08/13 16:02:53 by sbouheni          #+#    #+#             */
+/*   Updated: 2023/08/13 22:32:35 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-int	deal_key(int key, t_map *map)
+void	animation_timer(void)
 {
-	if (key == 65307)
-	{
-		mlx_destroy_window(map->mlx_ptr, map->window);
-		mlx_destroy_display(map->mlx_ptr);
-		free(map->mlx_ptr);
-		exit(0);
-	}
-	if (key == 119 || key == 65362)
-		move_up(map);
-	else if (key == 115 || key == 65364)
-		move_down(map);
-	else if (key == 97 || key == 65361)
-		move_left(map);
-	else if (key == 100 || key == 65363)
-		move_right(map);
+	long	i;
+
+	i = 0;
+	while (i < 200000000)
+		i++;
+}
+int	trigger_animation(t_map *map)
+{
 	render_window(map);
+	map->frame++;
+	if (map->frame > 8)
+		map->frame = 0;
 	return (0);
 }

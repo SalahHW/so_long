@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 20:21:22 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/29 03:41:42 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/13 16:00:10 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ void	launch_mlx(t_map *map)
 			* 64, "so_long");
 	render_window(map);
 	mlx_key_hook(map->window, deal_key, map);
+	mlx_loop_hook(map->mlx_ptr, trigger_animation, map);
 	mlx_loop(map->mlx_ptr);
 }

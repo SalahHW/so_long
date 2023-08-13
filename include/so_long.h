@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 21:03:34 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/08/12 21:51:04 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/13 16:00:59 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,4 +109,5 @@ void		draw_item(t_map *map, int x, int y);
 void		draw_enemy(t_map *map, int x, int y);
 void		draw_player(t_map *map, int x, int y);
 void		draw_portal(t_map *map, int x, int y);
+int			trigger_animation(t_map *map);
 #endif

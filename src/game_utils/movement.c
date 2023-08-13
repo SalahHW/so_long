@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 16:58:57 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/08/12 21:54:51 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/13 18:00:45 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,6 @@ void	move_up(t_map *map)
 		map->player_y_position--;
 		map->move_counter++;
 		ft_printf("Number of move : %d\n", map->move_counter);
-		map->frame++;
-		if (map->frame > 8)
-			map->frame = 1;
 	}
 }
 
@@ -52,9 +49,6 @@ void	move_down(t_map *map)
 		map->player_y_position++;
 		map->move_counter++;
 		ft_printf("Number of move : %d\n", map->move_counter);
-		map->frame++;
-		if (map->frame > 8)
-			map->frame = 1;
 	}
 }
 
@@ -75,9 +69,6 @@ void	move_left(t_map *map)
 		map->player_x_position--;
 		map->move_counter++;
 		ft_printf("Number of move : %d\n", map->move_counter);
-		map->frame++;
-		if (map->frame > 8)
-			map->frame = 1;
 	}
 }
 
@@ -98,8 +89,5 @@ void	move_right(t_map *map)
 		map->player_x_position++;
 		map->move_counter++;
 		ft_printf("Number of move : %d\n", map->move_counter);
-		map->frame++;
-		if (map->frame > 8)
-			map->frame = 1;
 	}
 }
