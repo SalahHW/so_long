@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/28 09:44:25 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/08/14 00:46:17 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/14 18:22:21 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,5 @@ int	deal_key(int key, t_map *map)
 		move_left(map);
 	else if (key == 100 || key == 65363)
 		move_right(map);
-	render_window(map);
 	return (0);
 }
