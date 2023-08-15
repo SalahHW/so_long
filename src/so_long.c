@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 21:38:02 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/30 17:57:00 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/14 21:52:49 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,4 @@ int	main(int argc, char **argv)
 	close(map_fd);
 	parse_map(map);
 	launch_mlx(map);
-	clear_map(map);
 }

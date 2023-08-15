@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 21:34:06 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/07/14 21:34:53 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/15 18:27:04 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ void	check_file_format(char *str)
 	str_ptr = str;
 	while (*str_ptr)
 		str_ptr++;
-	str_ptr -= 3;
+	str_ptr -= 4;
+	if (*str_ptr != '.')
+		printed_exit_error("Wrong file format\nFile format should be .ber");
+	str_ptr++;
 	if (*str_ptr != 'b')
 		printed_exit_error("Wrong file format\nFile format should be .ber");
 	str_ptr++;

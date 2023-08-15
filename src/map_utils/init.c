@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 16:06:58 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/08/12 21:51:45 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/15 19:21:40 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,19 @@ void	init_attribute(t_map *attribute)
 	attribute->enemy = 0;
 	attribute->move_counter = 0;
 	attribute->frame = 1;
+	attribute->mlx_ptr = NULL;
+	attribute->window = NULL;
+	attribute->ground_img = NULL;
+	attribute->wall_img = NULL;
+	attribute->item_img = NULL;
+	attribute->enemy_img = NULL;
+	attribute->player_img = NULL;
+	attribute->portal1_img = NULL;
+	attribute->portal2_img = NULL;
+	attribute->portal3_img = NULL;
+	attribute->portal4_img = NULL;
+	attribute->portal5_img = NULL;
+	attribute->portal6_img = NULL;
+	attribute->portal7_img = NULL;
+	attribute->portal8_img = NULL;
 }

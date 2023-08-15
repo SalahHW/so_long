@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 13:16:07 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/08/12 13:25:05 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/15 20:13:28 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,12 @@
 static void	check_wall_texture(t_map *map)
 {
 	if (!map->wall_img)
+	{
+		free_img(map);
+		free_mlx(map);
+		free_map(map);
 		printed_exit_error("Wall texture missing");
+	}
 }
 
 void	load_wall_texture(t_map *map)

@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 21:37:45 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/08/12 01:47:46 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/15 19:15:42 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,10 @@ void	count_element(t_map *map)
 			else if (map->map_grid[y][x] == 'K')
 				map->enemy++;
 			else
-				printed_exit_error("Map contains wrong elements");
+			{
+				free_map(map);
+				printed_exit_error("Map contain wrong element\n");
+			}
 			x++;
 		}
 		y++;

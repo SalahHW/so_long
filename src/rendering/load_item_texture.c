@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 13:12:02 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/08/12 13:18:48 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/15 20:13:28 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,12 @@
 static void	check_item_texture(t_map *map)
 {
 	if (!map->item_img)
+	{
+		free_img(map);
+		free_mlx(map);
+		free_map(map);
 		printed_exit_error("Item texture missing");
+	}
 }
 
 void	load_item_texture(t_map *map)

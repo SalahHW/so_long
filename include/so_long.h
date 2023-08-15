@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 21:03:34 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/08/13 16:00:59 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/15 19:13:42 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,13 +75,18 @@ void		check_closing(t_map *map);
 void		count_element(t_map *map);
 void		check_element_count(t_map *map);
 void		check_doability(t_map *map);
-//		error/printed_exit_error.c
+//		end_game/
 void		printed_exit_error(char *msg);
+void		quit_game(t_map *map);
+void		game_won(t_map *map);
+void		game_lost(t_map *map);
+void		free_map(t_map *map);
+void		free_mlx(t_map *map);
+void		free_img(t_map *map);
 //		map_utils/
 t_map		*read_map(int fd);
 t_map		*get_map_copy(t_map *map);
 void		init_attribute(t_map *attribute);
-void		clear_map(t_map *map);
 //		game_utils/
 void		launch_mlx(t_map *map);
 void		load_texture(t_map *map);

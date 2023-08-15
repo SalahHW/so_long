@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/12 12:36:04 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/08/12 12:44:18 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/15 20:13:28 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,12 @@ static void	check_portal_texture(t_map *map)
 	if (!map->portal1_img || !map->portal2_img || !map->portal3_img
 		|| !map->portal4_img || !map->portal5_img || !map->portal6_img
 		|| !map->portal7_img || !map->portal8_img)
+	{
+		free_img(map);
+		free_mlx(map);
+		free_map(map);
 		printed_exit_error("Portal texture is misiing");
+	}
 }
 
 void	load_portal_texture(t_map *map)
