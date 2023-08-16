@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 22:24:04 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/08/15 19:12:54 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/16 01:37:33 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ void	check_doability(t_map *map)
 			map_copy->player_y_position))
 	{
 		free_map(map_copy);
-		printed_exit_error("Map is not doable");	
+		free_map(map);
+		printed_exit_error("Map is not doable");
 		return ;
 	}
 	free_map(map_copy);

@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/16 18:38:53 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/08/12 13:40:52 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/16 01:36:23 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ void	check_closing(t_map *map)
 			if (y == 0 || y == map->height - 1 || x == 0 || x == map->width - 1)
 			{
 				if (map->map_grid[y][x] != '1')
+				{
+					free_map(map);
 					printed_exit_error("Map is not closed");
+				}
 			}
 			x++;
 		}
