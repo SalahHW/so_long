@@ -6,7 +6,7 @@
 #    By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 21:30:47 by sbouheni          #+#    #+#              #
-#    Updated: 2023/08/16 23:44:43 by sbouheni         ###   ########.fr        #
+#    Updated: 2023/08/16 23:58:26 by sbouheni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,13 +45,13 @@ SRCS			=	src/so_long.c												\
 					src/rendering/load_player_texture.c							\
 					src/rendering/load_portal_texture.c							\
 					src/rendering/load_wall_texture.c							\
-					src/rendering/render_window.c										\
+					src/rendering/render_window.c								\
 					src/rendering/render_ground.c								\
 					src/rendering/render_wall.c									\
-					src/rendering/draw_item.c									\
-					src/rendering/enemy_enemy.c									\
-					src/rendering/draw_player.c									\
-					src/rendering/draw_portal.c									\
+					src/rendering/render_item.c									\
+					src/rendering/render_enemy.c								\
+					src/rendering/render_player.c								\
+					src/rendering/render_portal.c								\
 					src/rendering/animation.c									\
 
 
