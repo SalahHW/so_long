@@ -1,16 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_wall.c                                        :+:      :+:    :+:   */
+/*   render_wall.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/30 18:14:02 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/08/12 13:39:46 by sbouheni         ###   ########.fr       */
+/*   Created: 2023/08/16 23:35:21 by sbouheni          #+#    #+#             */
+/*   Updated: 2023/08/16 23:37:49 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
+
+void	render_wall(t_map *map)
+{
+	int	x;
+	int	y;
+
+	y = 0;
+	while (map->map_grid[y])
+	{
+		x = 0;
+		while (map->map_grid[y][x])
+		{
+			if (map->map_grid[y][x] == '1')
+				draw_wall(map, x, y);
+			x++;
+		}
+		y++;
+	}
+}
 
 void	draw_wall(t_map *map, int x, int y)
 {

@@ -1,16 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_portal.c                                      :+:      :+:    :+:   */
+/*   render_portal.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/30 18:40:04 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/08/16 02:10:29 by sbouheni         ###   ########.fr       */
+/*   Created: 2023/08/16 23:54:58 by sbouheni          #+#    #+#             */
+/*   Updated: 2023/08/16 23:56:21 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
+
+void	render_portal(t_map *map)
+{
+	int	x;
+	int	y;
+
+	y = 0;
+	while (map->map_grid[y])
+	{
+		x = 0;
+		while (map->map_grid[y][x])
+		{
+			if (map->map_grid[y][x] == 'E')
+				draw_portal(map, x, y);
+			x++;
+		}
+		y++;
+	}
+}
 
 void	draw_portal(t_map *map, int x, int y)
 {

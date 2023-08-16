@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 16:02:53 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/08/16 02:54:17 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/16 23:29:40 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int	trigger_animation(t_map *map)
 	char		*move_count;
 
 	max_delay = 60;
-	mlx_clear_window(map->mlx_ptr, map->window);
-	render_window(map);
+	// mlx_clear_window(map->mlx_ptr, map->window);
+	// render_window(map);
 	if (delay_count >= max_delay)
 	{
 		map->frame++;

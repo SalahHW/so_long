@@ -1,19 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_ground.c                                      :+:      :+:    :+:   */
+/*   render_player.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/30 18:04:03 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/08/12 13:37:41 by sbouheni         ###   ########.fr       */
+/*   Created: 2023/08/16 23:46:44 by sbouheni          #+#    #+#             */
+/*   Updated: 2023/08/16 23:48:07 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-void	draw_ground(t_map *map, int x, int y)
+
+void	render_player(t_map *map)
 {
-	mlx_put_image_to_window(map->mlx_ptr, map->window, map->ground_img, x
-		* map->ground_width, y * map->ground_height);
+	int	x;
+	int	y;
+
+	y = 0;
+	while (map->map_grid[y])
+	{
+		x = 0;
+		while (map->map_grid[y][x])
+		{
+			if (map->map_grid[y][x] == 'P')
+				draw_player(map, x, y);
+			x++;
+		}
+		y++;
+	}
+}
+
+void	draw_player(t_map *map, int x, int y)
+{
+	mlx_put_image_to_window(map->mlx_ptr, map->window, map->player_img, x
+		* map->player_width, y * map->player_height);
 }

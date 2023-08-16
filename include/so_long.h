@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 21:03:34 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/08/15 19:13:42 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/16 23:16:32 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,9 @@ void		load_player_texture(t_map *map);
 void		load_portal_texture(t_map *map);
 void		load_wall_texture(t_map *map);
 void		render_window(t_map *map);
+
+void		render_wall(t_map *map);
+void		render_ground(t_map *map);
 void		draw_ground(t_map *map, int x, int y);
 void		draw_wall(t_map *map, int x, int y);
 void		draw_item(t_map *map, int x, int y);

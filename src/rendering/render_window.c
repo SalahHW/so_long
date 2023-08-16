@@ -1,19 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   draw_player.c                                      :+:      :+:    :+:   */
+/*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/30 18:39:01 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/08/12 13:39:57 by sbouheni         ###   ########.fr       */
+/*   Created: 2023/07/27 17:21:33 by sbouheni          #+#    #+#             */
+/*   Updated: 2023/08/16 23:35:54 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-void	draw_player(t_map *map, int x, int y)
+void	render_window(t_map *map)
 {
-	mlx_put_image_to_window(map->mlx_ptr, map->window, map->player_img, x
-		* map->player_width, y * map->player_height);
+	int	x;
+	int	y;
+
+	y = 0;
+	while (map->map_grid[y])
+	{
+		x = 0;
+		while (map->map_grid[y][x])
+		{
+			if (map->map_grid[y][x] == 'C')
+				draw_item(map, x, y);
+			if (map->map_grid[y][x] == 'K')
+				draw_enemy(map, x, y);
+			if (map->map_grid[y][x] == 'E')
+				draw_portal(map, x, y);
+			if (map->map_grid[y][x] == 'P')
+				draw_player(map, x, y);
+			x++;
+		}
+		y++;
+	}
 }
