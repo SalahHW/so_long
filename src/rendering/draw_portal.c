@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 18:40:04 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/08/14 21:20:48 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/16 02:10:29 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,28 @@
 
 void	draw_portal(t_map *map, int x, int y)
 {
+	void	*portal_img;
+
+	portal_img = NULL;
+	if (map->frame == 1)
+		portal_img = map->portal1_img;
+	else if (map->frame == 2)
+		portal_img = map->portal2_img;
+	else if (map->frame == 3)
+		portal_img = map->portal3_img;
+	else if (map->frame == 4)
+		portal_img = map->portal4_img;
+	else if (map->frame == 5)
+		portal_img = map->portal5_img;
+	else if (map->frame == 6)
+		portal_img = map->portal6_img;
+	else if (map->frame == 7)
+		portal_img = map->portal7_img;
+	else
+		portal_img = map->portal8_img;
 	if (map->item == 0)
-	{
-		if (map->frame == 1)
-			mlx_put_image_to_window(map->mlx_ptr, map->window, map->portal1_img,
-					x * map->portal_width, y * map->portal_height);
-		if (map->frame == 2)
-			mlx_put_image_to_window(map->mlx_ptr, map->window, map->portal2_img,
-					x * map->portal_width, y * map->portal_height);
-		if (map->frame == 3)
-			mlx_put_image_to_window(map->mlx_ptr, map->window, map->portal3_img,
-					x * map->portal_width, y * map->portal_height);
-		if (map->frame == 4)
-			mlx_put_image_to_window(map->mlx_ptr, map->window, map->portal4_img,
-					x * map->portal_width, y * map->portal_height);
-		if (map->frame == 5)
-			mlx_put_image_to_window(map->mlx_ptr, map->window, map->portal5_img,
-					x * map->portal_width, y * map->portal_height);
-		if (map->frame == 6)
-			mlx_put_image_to_window(map->mlx_ptr, map->window, map->portal6_img,
-					x * map->portal_width, y * map->portal_height);
-		if (map->frame == 7)
-			mlx_put_image_to_window(map->mlx_ptr, map->window, map->portal7_img,
-					x * map->portal_width, y * map->portal_height);
-		if (map->frame == 8)
-			mlx_put_image_to_window(map->mlx_ptr, map->window, map->portal8_img,
-					x * map->portal_width, y * map->portal_height);
-	}
+		mlx_put_image_to_window(map->mlx_ptr, map->window, portal_img, x
+			* map->portal_width, y * map->portal_height);
 	else
 		draw_ground(map, x, y);
 }
