@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 00:52:39 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/08/15 20:40:48 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/15 21:18:08 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ static void	free_portal_img(t_map *map)
 	if (map->portal8_img)
 		mlx_destroy_image(map->mlx_ptr, map->portal8_img);
 }
+
 void	free_img(t_map *map)
 {
 	if (map->ground_img)
