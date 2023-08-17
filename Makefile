@@ -6,7 +6,7 @@
 #    By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 21:30:47 by sbouheni          #+#    #+#              #
-#    Updated: 2023/08/17 16:49:29 by sbouheni         ###   ########.fr        #
+#    Updated: 2023/08/17 17:15:36 by joakoeni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@ DEBUG			=	$(CC) $(DEBUGFLAGS)
 NAME			=	so_long
 LIBFT			=	libft/libft.a
 LIBMLX			=	minilibx/libmlx_Linux.a
-ARCHIVE			=	so_long.a
 HEADER			=	include/so_long.h
 
 SRCS			=	src/so_long.c												\
@@ -60,11 +59,8 @@ OBJS			=	$(SRCS:.c=.o)
 
 all				:	$(NAME)
 
-$(NAME)			:	$(ARCHIVE) $(LIBFT) $(LIBMLX)
-	$(COMPILE) $(ARCHIVE) -L./libft/ -lft -L./minilibx/ -lmlx -lXext -lX11 -o $(NAME)
-
-$(ARCHIVE)		:	$(OBJS)	
-	ar rcs $(ARCHIVE) $(OBJS) 
+$(NAME)			:	$(OBJS) $(LIBFT) $(LIBMLX)
+	$(COMPILE) $(OBJS) -L./libft/ -lft -L./minilibx/ -lmlx -lXext -lX11 -o $(NAME)
 
 $(LIBFT)		:
 	make -C libft
