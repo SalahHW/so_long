@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/30 18:36:22 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/08/16 23:42:51 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/17 14:45:19 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ void	render_enemy(t_map *map)
 void	draw_enemy(t_map *map, int x, int y)
 {
 	mlx_put_image_to_window(map->mlx_ptr, map->window, map->enemy_img, x
-			* map->enemy_width, y * map->enemy_height);
+		* map->enemy_width, y * map->enemy_height);
 }

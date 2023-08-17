@@ -6,12 +6,11 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 23:46:44 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/08/16 23:48:07 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/17 14:45:31 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
-
 
 void	render_player(t_map *map)
 {

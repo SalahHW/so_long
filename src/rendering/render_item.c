@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 23:52:54 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/08/16 23:54:08 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/17 14:45:42 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ void	render_item(t_map *map)
 void	draw_item(t_map *map, int x, int y)
 {
 	mlx_put_image_to_window(map->mlx_ptr, map->window, map->item_img, x
-			* map->item_width, y * map->item_height);
+		* map->item_width, y * map->item_height);
 }
