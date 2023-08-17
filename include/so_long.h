@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 21:03:34 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/08/17 00:02:51 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/17 14:52:38 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void		check_element_count(t_map *map);
 void		check_doability(t_map *map);
 //		end_game/
 void		printed_exit_error(char *msg);
-void		quit_game(t_map *map);
+int		quit_game(t_map *map);
 void		game_won(t_map *map);
 void		game_lost(t_map *map);
 void		free_map(t_map *map);

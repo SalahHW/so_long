@@ -6,13 +6,13 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 21:26:52 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/08/15 21:12:11 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/17 14:52:56 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-void	quit_game(t_map *map)
+int	quit_game(t_map *map)
 {
 	free_img(map);
 	mlx_destroy_window(map->mlx_ptr, map->window);
