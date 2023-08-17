@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 16:02:53 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/08/16 23:29:40 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/17 00:35:31 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ int	trigger_animation(t_map *map)
 	int			max_delay;
 	char		*move_count;
 
-	max_delay = 60;
-	// mlx_clear_window(map->mlx_ptr, map->window);
-	// render_window(map);
+	max_delay = 600;
+	if (!map->item)
+		draw_portal(map, map->portal_x_position, map->portal_y_position);
 	if (delay_count >= max_delay)
 	{
 		map->frame++;
@@ -29,6 +29,7 @@ int	trigger_animation(t_map *map)
 		delay_count = 0;
 	}
 	move_count = ft_itoa(map->move_counter);
+	draw_wall(map, 0, 0);
 	mlx_string_put(map->mlx_ptr, map->window, 10, 30, 0XFFFFFF, move_count);
 	free(move_count);
 	delay_count++;

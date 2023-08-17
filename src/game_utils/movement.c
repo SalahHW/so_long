@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 16:58:57 by sbouheni          #+#    #+#             */
-/*   Updated: 2023/08/13 18:00:45 by sbouheni         ###   ########.fr       */
+/*   Updated: 2023/08/17 00:23:31 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	move_up(t_map *map)
 	if (is_valid_position(map, x, y - 1))
 	{
 		map->map_grid[y - 1][x] = 'P';
+		draw_player(map, x, y - 1);
+		draw_ground(map, x, y);
 		if (y == map->portal_y_position && x == map->portal_x_position)
 			map->map_grid[y][x] = 'E';
 		else
@@ -42,6 +44,8 @@ void	move_down(t_map *map)
 	if (is_valid_position(map, x, y + 1))
 	{
 		map->map_grid[y + 1][x] = 'P';
+		draw_player(map, x, y + 1);
+		draw_ground(map, x, y);
 		if (y == map->portal_y_position && x == map->portal_x_position)
 			map->map_grid[y][x] = 'E';
 		else
@@ -62,6 +66,8 @@ void	move_left(t_map *map)
 	if (is_valid_position(map, x - 1, y))
 	{
 		map->map_grid[y][x - 1] = 'P';
+		draw_player(map, x - 1, y);
+		draw_ground(map, x, y);
 		if (y == map->portal_y_position && x == map->portal_x_position)
 			map->map_grid[y][x] = 'E';
 		else
@@ -82,6 +88,8 @@ void	move_right(t_map *map)
 	if (is_valid_position(map, x + 1, y))
 	{
 		map->map_grid[y][x + 1] = 'P';
+		draw_player(map, x + 1, y);
+		draw_ground(map, x, y);
 		if (y == map->portal_y_position && x == map->portal_x_position)
 			map->map_grid[y][x] = 'E';
 		else
