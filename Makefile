@@ -6,7 +6,7 @@
 #    By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 21:30:47 by sbouheni          #+#    #+#              #
-#    Updated: 2023/08/16 23:58:26 by sbouheni         ###   ########.fr        #
+#    Updated: 2023/08/17 16:49:29 by sbouheni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ DEBUG			=	$(CC) $(DEBUGFLAGS)
 NAME			=	so_long
 LIBFT			=	libft/libft.a
 LIBMLX			=	minilibx/libmlx_Linux.a
+ARCHIVE			=	so_long.a
 HEADER			=	include/so_long.h
 
 SRCS			=	src/so_long.c												\
@@ -54,21 +55,32 @@ SRCS			=	src/so_long.c												\
 					src/rendering/render_portal.c								\
 					src/rendering/animation.c									\
 
+OBJS			=	$(SRCS:.c=.o)
+
 
 all				:	$(NAME)
 
-$(NAME)			:	$(SRCS) $(LIBFT)
-	$(COMPILE) $(HEADER) $(SRCS) -L./libft/ -lft -L./minilibx/ -lmlx -lXext -lX11 -o $(NAME)
+$(NAME)			:	$(ARCHIVE) $(LIBFT) $(LIBMLX)
+	$(COMPILE) $(ARCHIVE) -L./libft/ -lft -L./minilibx/ -lmlx -lXext -lX11 -o $(NAME)
+
+$(ARCHIVE)		:	$(OBJS)	
+	ar rcs $(ARCHIVE) $(OBJS) 
 
 $(LIBFT)		:
 	make -C libft
 
+$(LIBMLX)		:
+	make -C minilibx
+
 clean			:
-	rm -f $(NAME)
+	rm -f $(ARCHIVE) $(OBJS)
 	cd ./libft && make $@
+	cd ./minilibx && make $@
 
 fclean			:	clean
+	rm -rf $(NAME)
 	cd ./libft && make $@
+	cd ./minilibx && make clean
 
 re				:	fclean all
 
